@@ -1,0 +1,17 @@
+<%= form_for(@picture) do |f| %>
+  
+  <%= error_messages_for(@picture) %>
+  
+  <p><%= f.label :nome %>
+  <%= f.text_field :nome %></p>
+  
+  <p><%= f.label :gallery_id %>
+  <%= f.select :gallery_id, Gallery.all.collect{ |gallery| [gallery.nome, gallery.id] }, include_blank: true %></p>
+  
+  <p><%= f.label :image %>
+  <%= f.file_field :image %></p>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

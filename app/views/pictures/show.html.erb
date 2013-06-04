@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @picture.gallery.nome %></h2>
+<p><%= image_tag @picture.image_url, size: "250x250" %></p>
+<p><%= @picture.nome %></p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

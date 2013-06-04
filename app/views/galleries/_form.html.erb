@@ -1,0 +1,14 @@
+<%= form_for(@gallery) do |f| %>
+
+  <%= error_messages_for(@gallery) %>
+  
+  <p><%= f.label :nome %>
+  <%= f.text_field :nome %></p>
+  
+  <p><%= f.label :descricao %>
+  <%= f.text_field :descricao %></p>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Gallery: <%= @gallery.nome %></h1>
+
+<div id="pictures">
+  <% @pictures.each do |picture| %>
+    <div class="picture">
+      <%= image_tag picture.image_url, size: "200x200" if picture.image? %>
+      <div class="name"><%= picture.nome %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_picture_path(picture) %> |
+        <%= link_to "remove", picture, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

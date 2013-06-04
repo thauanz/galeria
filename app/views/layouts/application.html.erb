@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galeria</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <ul class="menu">
+    <li><%= link_to "Galleries", galleries_path %></li>
+    <li><%= link_to "Pictures", pictures_path %></li>
+  </ul>
+  
+  <% if user_signed_in? %>
+    <ul class="menu right">
+      <li><%= current_user.email %></li>
+      <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+  
+  <%= yield %>
+
+</body>
+</html>
